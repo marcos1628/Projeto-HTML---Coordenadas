@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordenadas.icore.com.br</title>
+    <link href="styleCoordenadas.css"  rel="stylesheet"/>
+</head>
+
+<body>
+    <h1>Conversor de Coordenadas em Grau para Decimal</h1>
+
+    <label for="latitude" id="latitudePrimeira">Digite a latitude:</label>
+    <br>
+    <input type="text" id="latitude" placeholder="Primeira Coordenada">
+    <br>
+
+    <label for="direcaoLat" id="direcaolatprimeira">Selecione a Direção:</label>
+    <br>
+    <select id="direcaoLat">
+        <option value="N">N</option>
+        <option value="S">S</option>
+    </select>
+    <br>
+    <br>
+    <label for="longitude" id="LongitudeSegunda">Digite a longitude:</label>
+    <br>
+    <input type="text" id="longitude" placeholder="Segunda Coordenada">
+    <br>
+    <label for="direcaoLong" id="direcaologsegunda">Selecione a Direção:</label>
+    <br>
+    <select id="direcaoLong">
+        <option value="L">L</option>
+        <option value="O">O</option>
+        <option value="W">W</option>
+    </select>
+    <br>
+    <br>
+
+<!--ONCLICK = Quando este elemento for clicado, execute esta função JavaScript.-->
+    <button onclick="processarCoordenadas()">Converter</button>
+
+    <h2>Resultado:</h2>
+    <div id="resultado"></div>
+
+<!--Client-Side-->
+    <script>
+        function obterCoordenada(texto) {
+            const regex = /(\d+)(\.\d+)?/g;
+            const valores = [];
+            let match;
+
+            while ((match = regex.exec(texto)) !== null) {
+                valores.push(parseFloat(match[0]));
+            }
+
+            const grau = valores[0] || 0;
+            const minuto = valores[1] || 0;
+            const segundo = valores[2] || 0;
+            return grau + (minuto / 60) + (segundo / 3600);
+        }
+
+        function aplicarDirecao(valor, direcao) {
+            switch (direcao.toUpperCase()) {
+                case 'N':
+                case 'L':
+                    return valor;
+                case 'S':
+                case 'O':
+                case 'W':
+                    return -valor;
+                default:
+                    alert("Opção inválida!");
+                    return null;
+            }
+        }
+
+        function processarCoordenadas() {
+            const latitudeStr = document.getElementById("latitude").value;
+            let latitude = obterCoordenada(latitudeStr);
+            const direcaoLat = document.getElementById("direcaoLat").value;
+            latitude = aplicarDirecao(latitude, direcaoLat);
+            if (latitude === null) return;
+
+            const longitudeStr = document.getElementById("longitude").value;
+            let longitude = obterCoordenada(longitudeStr);
+            const direcaoLong = document.getElementById("direcaoLong").value;
+            longitude = aplicarDirecao(longitude, direcaoLong);
+            if (longitude === null) return;
+
+            const resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerText = `Latitude: ${latitude}\nLongitude: ${longitude}\nLatitude x Longitude: ${latitude}, ${longitude}`;
+        }
+    </script>
+    <footer>
+        <img src="Screenshot_2.png" alt="logo da empresa"/>
+        <p>By Sr.Marcos</p>
+    </footer>
+</body>
+
+</html>

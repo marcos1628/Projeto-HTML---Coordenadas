@@ -1,0 +1,15 @@
+1. Crie campos no HTML
+Dois inputs pra digitar a latitude e longitude convertidas manualmente (ou via copy-paste do console Java).
+
+2. Adicione um botão
+Um botão chamado “Exibir Coordenadas” ou “Mostrar no Mapa”, por exemplo.
+
+3. Capture os valores via JavaScript
+Ao clicar no botão, pegue os valores dos inputs.
+
+4. Exiba o resultado
+Mostre as coordenadas em um div ou p.
+
+5. (Opcional)
+Integre com um mapa (ex: Google Maps ou Leaflet) pra mostrar o ponto usando essas coordenadas.
+

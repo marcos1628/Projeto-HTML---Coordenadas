@@ -1,0 +1,90 @@
+h1 {
+    padding-top:100px;
+    color: rgb(0, 250, 237);
+    text-transform: uppercase;
+}
+
+body {
+    /*Largura*/
+    width: 1920px;
+    /*Altura*/
+    height: 1080px;
+    background-color: rgb(20, 12, 18);
+    text-align: center;    
+}
+#latitudePrimeira {
+    color: rgb(21, 255, 0);
+    font-size: 28px;
+}
+
+#direcaolatprimeira {
+    color: rgb(21, 255, 0);
+    font-size: 22px;
+}
+
+#LongitudeSegunda {
+    color: rgb(21, 255, 0);
+    font-size: 28px;
+}
+
+#direcaologsegunda {
+    color: rgb(21, 255, 0);
+    font-size: 22px;
+}
+
+h2 {
+    color: rgb(0, 250, 237);
+    text-transform: uppercase;
+}
+
+#resultado{
+    color: rgb(21, 255, 0);
+    font-size: 20px;
+
+}
+
+footer p{
+    color: rgb(21, 255, 0);
+    position: absolute;
+    top: 934px;
+    left: 1894px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+footer img{
+    /* Para mover objeto */
+    /* align-items: end; */
+    position: absolute;
+    top: 843px; 
+    left: 1893px;
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgb(21, 255, 0);
+    overflow: hidden;
+}
+
+input, select, button {
+    font-size: 18px;
+}
+
+button{
+    border: 1.5px solid rgb(0, 250, 237);
+    border-style:solid
+}
+
+#latitude {
+    margin-bottom: 20px;
+}
+
+#direcaoLat {
+    margin-bottom: 30px;
+}
+
+#longitude {
+    margin-bottom: 20px;
+}
+
+#direcaoLong {
+    margin-bottom: 30px;
+}
